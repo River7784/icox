@@ -1,0 +1,1758 @@
+@charset "utf-8";
+
+@media (min-width:1024px) {
+
+/*width: 1003px*/
+body {
+    background: url(../images/body_bg.gif) repeat-x;
+}
+
+/*firstheader 시작*/
+header#firstheader {
+    position: relative;
+    width: 1003px;
+    margin: 0 auto;
+    z-index: 40;
+}
+
+header#firstheader h1{
+    padding: 26px 0 17px;
+    height: 62px;
+}
+
+header#firstheader ul.util{
+    position: absolute;
+    right: 0;
+    top: 20px;
+}
+
+header#firstheader ul.until::after{
+    content: "";
+    display: block;
+    clear: both;
+}
+
+header#firstheader ul.util li{
+    display: inline;
+    padding-left: 20px;
+}
+
+header#firstheader form{
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 235px;
+    text-align: right;
+}
+
+#firstheader form legend{
+    display: none;
+}
+
+#firstheader form .tbox{
+    width: 178px;
+    height: 19px;
+    border: 1px solid #ccc;
+}
+
+#gnb{
+    position: relative;
+    width: 100%;
+    height: 70px;
+}
+
+#gnb::after{
+    content: "";
+    display: block;
+    clear: both;
+}
+
+#gnb ul{
+    float: left;
+}
+
+#gnb li{  /*li float 해야하므로 gnb안에 있는 li 모두 호출해서 처리*/
+    float: left;
+    width: 205px;
+    height: 39px;
+    text-align: center;
+    background: #3da7db;
+    margin-right: 1px;
+    border-radius: 3px;
+}
+
+#gnb li a.mm{ /* 링크 걸려있는 1차메뉴 정리*/
+    float: left;
+    width: 205px;
+    height: 39px;
+    text-align: center;
+    padding-top: 10px; /*윗 공간 띄우기 위해서*/
+    color: #fff
+}
+
+#gnb li a.mm:hover{ /*마우스 올라갔을 때*/
+    height: 32px;
+    background: #3da7db url(../images/over_icon.gif) no-repeat center bottom; /*배경 이미지의 높이가 32로 지정됨*/ /*한꺼번에 처리했음*/
+}
+
+#gnb li ul{ /*2차 메뉴 정리*/
+    position: absolute; 
+    left: 40px; /*2차메뉴 위치값*/
+    top: 45px; /*2차메뉴 위치값*/
+    /*display: none;*/
+}
+
+#gnb li.m1 ul{ /*m1 안에 있는 ul 위치 조정*/
+    left: 0;
+}
+
+#gnb li.m2 ul{ /*"*/
+    left: 230px;
+}
+
+#gnb li.m3 ul{
+    left: 405px;
+}
+
+#gnb li.m4 ul{
+    left: 640px;
+}
+
+#gnb li ul li{ /*간격 설정*/
+    padding: 0 10px;
+    width: auto;
+    height: auto;
+    background: none;
+}
+
+#gnb #allmenu_view{ /*전체메뉴*/
+    float: left;
+    width: 179px;
+    text-align: center;
+}
+
+#gnb #allmenu_view a{ /*전체메뉴의 a태그*/
+    display: inline-block; /*크기설정 해야됨, inline으로 유지*/
+    width: 100%;
+    height: 26px;   /*위 li의 높이값 39를 맞춤*/
+    padding-top: 13px; /*위 li의 높이값 39를 맞춤*/
+    color: #fff;
+    background: #3da7db url(../images/btn_allmenu.gif) no-repeat center top;
+}
+
+#allmenu_box{ /*전체메뉴 박스*/
+    position: absolute;
+    width: 850px; /*850+30+30 총 910px*/
+    left: 40px;
+    top: 105px;
+    padding: 15px 30px;
+    z-index: 40;
+    display: none; /*hover클래스 시 나타나게 처리*/
+    background: #fff url(../images/allMenu_bg.gif) repeat-x;
+    border: 4px solid #369;
+}
+
+#allmenu_box ul{ /*박스 안에 모든 ul 수정*/
+    width: 100%;
+}
+
+#allmenu_box ul::after{
+    content: "";
+    display: block;
+    clear: both;
+}
+
+#allmenu_box ul li{ /*ul안에 모든 li*/
+    float: left;
+    width: 140px;
+    padding: 0 30px;
+}
+
+#allmenu_box ul li a{
+    font: bold 16px "NGothicEB",Gulim;
+    color: #555;
+}
+
+#allmenu_box ul li ul{
+    padding-top: 20px;
+    width: 100%;
+}
+
+#allmenu_box ul li ul li{
+    float: none; /*아래로 떨어져야 하기 때문에 float 해제*/
+    width: auto;
+    padding: 5px 0;
+    border-bottom: 1px dashed #ccc;
+}
+
+#allmenu_box ul li ul li a{
+    font: bold 14px "NGothicEB",Gulim;
+    color: #aaa;
+}
+
+.all_close{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    padding: 5px;
+    background: #369;
+    color: white;
+}
+
+.all_close:hover{
+    color: #fff;
+}
+/*firstheader 끝*/
+
+/*section 시작*/
+#recomm_book{   /*제일 큰 덩어리부터 처리*/ 
+    position: relative;
+    width: 1003px;
+    margin: 0 auto;
+    padding-bottom: 10px;
+    overflow: hidden;
+    z-index: 30; /*index값은 10,100단위로*/
+}
+
+#book_frame{
+    position: relative;
+    left: 0;
+    width: 200%; /*보여지는 영역은 2개가 들어가야 하기 때문에 1003의 2배*/
+}
+
+#book_frame::after{
+    content: "";
+    display: block;
+    clear: both;
+}
+
+#book_frame .bookcon{
+    float: left;
+    width: 50%; /*200%=2006의 50%*//*1003*/
+    padding-top: 30px;
+}
+
+#book_frame .bookcon::after{
+    content: "";
+    display: block;
+    clear: both;
+}
+
+#book_frame .bookcon h2{
+    text-align: right;
+    padding: 0 50px 0 0; /*예제 이미지 오른쪽에 여백이 있어서..*/
+}
+
+#book_frame .bookcon ul{
+    width: 100%;
+}
+
+#book_frame .bookcon ul::after{
+    content: "";
+    display: block;
+    clear: both;
+}
+
+#book_frame .bookcon li.pic{
+    float: left; /*책은 왼쪽으로*/
+    position: relative;
+    width: 273px; /*이미지 크기*/
+    top: -50px; /*살짝 위로 올라가야됨*/
+    margin-bottom: -50px; /*살짝 위로 올라가야됨*/
+    padding-left: 50px;
+}
+
+#book_frame .bookcon li.smr{
+    float: right; /*설명은 오른쪽으로*/
+    width: 489px;
+    padding: 50px 50px 0 0;
+}
+
+#book_frame .bookcon li.detail{
+    float: right;
+    width: 430px;
+    padding: 50px 65px 0 0;
+}
+
+#arrow a{ /*화살표 두개 한번에 포지션을 잡고 안에서 각각 위치 보내주면됨*/
+    position: absolute;
+    top: 120px;
+}
+
+#arrow a.prev{
+    left:0
+}
+
+#arrow a.next{
+    right:0
+}
+
+#book_roll{
+    position: absolute;
+    left: 48%;
+    bottom: 0;
+}
+
+#book_roll li{ /*위치는 위에서 두개 한번에 잡고 inline으로 한번에 펼치기*/
+    display: inline;
+}
+
+/*content 시작*/
+#content{   
+    width: 1003px;
+    margin: 0 auto;
+    border-top: 3px double #ccc;
+    padding: 30px 0;
+}
+
+#content::after{ /*아래로 정렬되어있는 div요소들 float시켜서 왼쪽으로 쭉 나열 해서 배치*/
+    content: "";
+    display: block;
+    clear: both;
+}
+
+#login_banner{ /*div 로그인배너*/
+    float: left;
+    width: 201px;
+    padding: 0 35px 0 10px;
+}
+
+#login_area{
+    
+}
+
+#login_area h2{
+    height: 33px;
+}
+
+#login_area .iform{
+    position: relative;
+    width: 100%;
+}
+
+#login_area .iform fieldset{
+    border: 1px solid #ccc;
+    padding: 10px 15px;
+}
+
+#login_area .iform .tbox{ /*input의 아이디, 비밀번호 입력란 크기 및 선 수정*/
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 105px;
+    height: 22px;
+}
+
+#login_area .iform .p{
+    padding: 2px 0 3px;
+}
+
+#login_area .iform .loginbtn{
+    position: absolute;
+    right: 15px;
+    top: 11px;
+}
+
+#login_area .iform .loginbtn a{
+    display: block;
+    width: 54px;
+    height: 33px;
+    padding-top: 17px;
+    background-color: #09f;
+    text-align: center;
+    color: white;
+    border: 1px solid #069;
+    border-radius: 7px;
+}
+
+#login_area .iform ul{
+    padding: 10px 0 5px;
+}
+
+#login_area .iform ul::after{
+    content: "";
+    display: block;
+    clear: both;
+}
+
+#login_area .iform .find{
+    float: left;
+}
+
+#login_area .iform .join{
+    float: right;
+}
+
+#login_area .iform ul li a{
+    font: 12px "NGothic",Gulim; color: #999;
+}
+
+#login_area .iform ul li a:hover{
+    color: #333;
+}
+
+#banner_area{
+    padding-top: 10px;
+}
+
+#banner_area li{
+    padding-top: 5px;
+    text-align: center;
+}
+
+#newbooks_news{ /*div 뉴북 뉴스*/
+    position: relative;
+    float: left;
+    width: 470px;
+    padding: 0 10px 0 0; /*40px로 하면 border 부족한데*/
+}
+
+#newbooks_news .t1{
+    position: absolute;
+    right: 131px;
+    top: 0;
+}
+
+#newbooks_news .t2{
+    position: absolute;
+    right: 11px;
+    top: 0;
+}
+
+#newbooks_news .item1{
+    margin-top: 37px;
+    border-top: 1px solid #aaa;
+}
+
+#newbooks_news a.rss{
+    display: inline-block;
+    margin-top: 40px;
+}
+
+#newbook_list1{
+
+}
+
+.booklist{
+    font: 13px "NGothic",Gulim;
+}
+
+.booklist::after{
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.booklist h1{
+    float: left;
+    width: 85px;
+    padding: 0,0,0,10px;
+}
+
+.booklist p.subtit{
+    float: right;
+    width: 340px;
+    padding-right: 10px;
+    font: 13px "NGothic",Gulim;
+    color: #333;
+}
+
+.booklist p.smr{
+    float: right;
+    width: 340px;
+    padding:10px 10px 10px 0;
+    line-height: 150%;
+    color: #999
+}
+
+.booklist footer{
+    float: right;
+    width: 340px;
+    padding-right: 10px;
+}
+
+.booklist footer strong{
+    font: 13px "NGothic",Gulim;
+    color: #f60;
+}
+
+#newbooks_news .item2{ /* 클릭하면 화면 넘어감 */
+    display: none;
+}
+
+#news_list{
+    margin-top: 37px;
+    border-top: 1px solid #aaa;
+    padding-top: 40px;
+}
+
+#news_list ul{
+    padding: 0 10px;
+}
+
+#news_list ul li{
+    position: relative;
+    width: 100%;
+    padding: 8px 0;
+    border-bottom: 1px solid #ccc;
+    font: 13px "NGothic",Gulim;
+    color: #999;
+}
+
+#news_list ul li:last-child{
+    border-bottom: none;
+}
+
+#news_list ul li a{
+    background: url(../images/bul_icon.gif) no-repeat 0 50%;
+    padding-left: 10px;
+    color: #999
+}
+
+#news_list ul li a:hover{
+    color: #069;
+}
+
+#news_list ul li span{
+    position: absolute;
+    right: 10px;
+}
+
+#down_autor{ /*이달의 저자*/
+    float: left;
+    width: 248px;
+}
+
+#autor_column h2{
+    padding: 10px 0;
+}
+
+#autor_column ul li a{
+    font: 12px "NGothic",Gulim;
+    color: #999;
+}
+
+#autor_column .nscreen{
+    padding-top: 10px;
+}
+
+#autor_column .nscreen span{
+    display: block;  /*block으로 수직구조*/
+    color: #333;
+    font-family: "NGothic";
+}
+
+/*footer*/
+footer#realfooter{
+    background: url("../images/foot_bg.gif") repeat-x;
+}
+
+footer#realfooter .foot{
+    width: 1003px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+footer#realfooter .foot::after{
+    content: "";
+    display: block;
+    clear: both;
+}
+
+footer#realfooter .foot div{  /*position을 이용해서 위치를 잡아도 되지만(위치값 다 지정), float로 펼치는 방법을 사용*/
+    float: left;              /*absolute값은 좌표가 정확한지 확인불가, float 사용 권장,,*/
+    width: 500px;
+    color: #999;
+}
+
+footer#realfooter .foot p{
+    font: 12px "NGothic",Gulim;
+}
+
+footer#realfooter .foot .copy{
+    display: block;
+    padding-top: 10px;
+}
+
+footer#realfooter .foot ul{
+    float: right;
+}
+
+footer#realfooter .foot ul li{
+    display: inline; /*두개밖에 없으니까 inline으로 펼치기*/
+    padding: 0 5px;
+}
+} 
+/*데스크탑 반응형*/
+
+
+
+
+
+
+
+/*-------------------------------------------------------------------------------------------*/
+
+
+
+
+
+
+
+
+@media (min-width:768px) and (max-width:1023px) {
+
+/*width: 1003px*/
+body {
+    background: url(../images/body_bg.gif) repeat-x;
+}
+
+/*firstheader 시작*/
+header#firstheader {
+    position: relative;
+    width: 95%;
+    margin: 0 auto;
+    z-index: 40;
+}
+
+header#firstheader h1{
+    padding: 26px 0 17px;
+    height: 62px;
+}
+
+header#firstheader ul.util{
+    position: absolute;
+    right: 0;
+    top: 20px;
+}
+
+header#firstheader ul.until::after{
+    content: "";
+    display: block;
+    clear: both;
+}
+
+header#firstheader ul.util li{
+    display: inline;
+    padding-left: 20px;
+}
+
+header#firstheader form{
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 235px;
+    text-align: right;
+}
+
+#firstheader form legend{
+    display: none;
+}
+
+#firstheader form .tbox{
+    width: 178px;
+    height: 19px;
+    border: 1px solid #ccc;
+}
+
+#gnb{
+    position: relative;
+    width: 100%;
+    height: 70px;
+    margin: 0 auto;
+}
+
+#gnb::after{
+    content: "";
+    display: block;
+    clear: both;
+}
+
+#gnb ul{
+    float: left;
+    width: 80%;
+}
+
+#gnb li{  /*li float 해야하므로 gnb안에 있는 li 모두 호출해서 처리*/
+    float: left;
+    width: 25%; /*li값은 width값의 4등분으로*/
+    height: 39px;
+    text-align: center;
+    background: #3da7db;
+    border-radius: 3px;
+    border-right: 1px solid #06c;
+    box-sizing: border-box; /*box-sizing 예제, 확인 매우 중요!!*/
+}
+
+#gnb li a.mm{ /* 링크 걸려있는 1차메뉴 정리*/
+    float: left;
+    width: 100%;
+    height: 29px;
+    text-align: center;
+    padding-top: 10px; /*윗 공간 띄우기 위해서*/
+    color: #fff
+}
+
+#gnb li a.mm:hover{ /*마우스 올라갔을 때*/
+    height: 29px;
+    background: #3da7db url(../images/over_icon.gif) no-repeat center bottom; /*배경 이미지의 높이가 32로 지정됨*/ /*한꺼번에 처리했음*/
+}
+
+#gnb li ul{ /*2차 메뉴 정리*/ 
+    left: 0; /*2차메뉴 위치값*/
+    top: 45px; /*2차메뉴 위치값*/
+    display: none;
+}
+
+#gnb li.m1 ul{ /*m1 안에 있는 ul 위치 조정*/
+    width: 170px;
+}
+
+#gnb li.m2 ul{ /*"*/
+    left: 20%;
+    width: 170px;
+}
+
+#gnb li.m3 ul{
+    left: 40%;
+    left: 280px;
+}
+
+#gnb li.m4 ul{
+    left: 60%;
+    left: 200px;
+}
+
+#gnb li ul li{ /*간격 설정*/
+    padding: 0 10px;
+    width: auto;
+    height: auto;
+    background: none;
+    border: none;
+}
+
+#gnb #allmenu_view{ /*전체메뉴*/
+    float: left;
+    width: 20%;
+    text-align: center;
+}
+
+#gnb #allmenu_view a{ /*전체메뉴의 a태그*/
+    display: inline-block; /*크기설정 해야됨, inline으로 유지*/
+    width: 100%;
+    height: 26px;   /*위 li의 높이값 39를 맞춤*/
+    padding-top: 13px; /*위 li의 높이값 39를 맞춤*/
+    color: #fff;
+    background: #3da7db url(../images/btn_allmenu.gif) no-repeat center top;
+}
+
+#allmenu_box{ /*전체메뉴 박스*/
+    position: absolute;
+    width: 85%;
+    left: 7%;
+    top: 105px;
+    padding: 10px 0 0;
+    z-index: 40;
+    display: none; /*hover클래스 시 나타나게 처리*/
+    border: 4px solid #369;
+    background-color: #fff;
+}
+
+#allmenu_box ul{ /*박스 안에 모든 ul 수정*/
+    width: 95%;
+    margin: 0 auto;
+    padding-bottom: 5px;
+}
+
+#allmenu_box ul li{ /*ul안에 모든 li*/
+    width: 100%;
+    border-bottom: 1px dashed #ccc;
+    padding: 5px 0;
+}
+
+#allmenu_box ul li:last-child{
+    border: none;
+}
+
+#allmenu_box ul li::after{
+    content: "";
+    display: block;
+    clear: both;
+}
+
+#allmenu_box ul li a{
+    font:16px/1.8 "NGothicEB",Gulim;
+    color: #555;
+    background: #eee;
+    float: left;
+    width: 33%; /*크기 확인 필요*/
+    text-align: center;
+}
+
+#allmenu_box ul li ul{
+    float: left;
+    width: 65%;
+    padding: 0 0 0 2%;
+}
+
+#allmenu_box ul li ul li{
+    float: left;
+    width: auto;
+    padding: 5px 5% 5px 0;
+    border: none; /*border 중복으로 인해 해제*/
+}
+
+#allmenu_box ul li ul li a{
+    width: auto;
+    font: 14px "NGothicEB",Gulim;
+    color: #aaa;
+    text-align: left;
+    background: none;
+}
+
+.all_close{
+    display: block;
+    text-align: center;
+    padding: 5px;
+    background-color: #369;
+    color: #fff;
+}
+
+.all_close:hover{
+    color: #fff;
+}
+/*firstheader 끝*/
+
+/*section 시작*/
+#recomm_book{   /*제일 큰 덩어리부터 처리*/ 
+    position: relative;
+    width: 95%;
+    margin: 0 auto;
+    padding-bottom: 15px;
+    overflow: hidden;
+    z-index: 30; /*index값은 10,100단위로*/
+}
+
+#book_frame{
+    position: relative;
+    left: 0;
+    width: 200%; /*보여지는 영역은 2개가 들어가야 하기 때문에 1003의 2배*/
+}
+
+#book_frame:after{
+    content: "";
+    display: block;
+    clear: both;
+}
+
+#book_frame .bookcon{
+    float: left;
+    width: 50%; /*200%=2006의 50%*//*1003*/
+}
+
+#book_frame .bookcon::after{
+    content: "";
+    display: block;
+    clear: both;
+}
+
+#book_frame .bookcon h2{
+    text-align: right;
+    padding: 2% 9% 0 0;
+}
+
+#book_frame .bookcon h2 img{
+    width: 51%;
+}
+
+#book_frame .bookcon ul{
+    width: 100%;
+}
+
+#book_frame .bookcon ul::after{
+    content: "";
+    display: block;
+    clear: both;
+}
+
+#book_frame .bookcon li.pic{
+    float: left; /*책은 왼쪽으로*/
+    position: relative;
+    width: 27.2%; /*이미지 크기*/
+    top: -45px; /*살짝 위로 올라가야됨*/
+    margin-bottom: -45px; /*살짝 위로 올라가야됨*/
+    padding-left: 6.48%;
+}
+
+#book_frame .bookcon li.smr{
+    float: right; /*설명은 오른쪽으로*/
+    width: 48.75%;
+    padding: 3% 6.3% 0;
+}
+
+#book_frame .bookcon li.detail{
+    float: right;
+    width: 44.76%;
+    padding: 5% 6% 0;
+}
+
+#book_frame .bookcon li.detail img{
+    width: 60%; /*브라우저 크기에 따라 크기 조정이 될 수 있도록 설정*/
+}
+
+#arrow a{ /*화살표 두개 한번에 포지션을 잡고 안에서 각각 위치 보내주면됨*/
+    position: absolute;
+    top: 38%;
+}
+
+#arrow a.prev{
+    left:0
+}
+
+#arrow a.next{
+    right:0
+}
+
+#book_roll{
+    position: absolute;
+    left: 48%;
+    bottom: 0;
+}
+
+#book_roll li{ /*위치는 위에서 두개 한번에 잡고 inline으로 한번에 펼치기*/
+    display: inline;
+}
+
+/*content 시작*/
+#content{   
+    width: 95%;
+    margin: 0 auto;
+    border-top: 3px double #ccc;
+    padding: 30px 0;
+}
+
+#content::after{ /*아래로 정렬되어있는 div요소들 float시켜서 왼쪽으로 쭉 나열 해서 배치*/
+    content: "";
+    display: block;
+    clear: both;
+}
+
+#login_banner{ /*div 로그인배너*/
+    float: left;
+    max-width: 201px;
+    width: 22%; /*기본 사이즈 값*/
+    padding: 0 0 20px 10px;
+}
+
+#login_area{
+    
+}
+
+#login_area h2{
+    height: 33px;
+}
+
+#login_area h2 img{
+    height: 33px;
+}
+
+#login_area .iform{
+    position: relative;
+    width: 100%;
+}
+
+#login_area .iform fieldset{
+    border: 1px solid #ccc;
+    padding: 8px 5px 8px 5px;
+}
+
+#login_area .iform .tbox{ /*input의 아이디, 비밀번호 입력란 크기 및 선 수정*/
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 57%;
+    height: 22px;
+}
+
+#login_area .iform .p{
+    padding: 2px 0 3px;
+}
+
+#login_area .iform .loginbtn{
+    position: absolute;
+    width: 56px;
+    height: 53px;
+    right: 5px;
+    top: 11px;
+}
+
+#login_area .iform .loginbtn a{
+    display: block;
+    width: 54px;
+    height: 33px;
+    padding-top: 14px;
+    background-color: #09f;
+    text-align: center;
+    color: white;
+    border: 1px solid #069;
+    border-radius: 7px;
+}
+
+#login_area .iform ul li a{
+    font: 12px "NGothic",Gulim; 
+    color: #999;
+    padding-left: 5px;
+    background: url(../images/bul_login.gif) no-repeat 0 50%; /*아이디,비밀번호 앞에 점*/
+}
+
+#login_area .iform ul li a:hover{
+    color: #333;
+}
+
+#banner_area{
+    padding-top: 8px;
+}
+
+#banner_area li{
+    padding-top: 2px;
+    text-align: center;
+}
+
+#newbooks_news{ /*div 뉴북 뉴스*/
+    position: relative;
+    float: right;
+    width: 73%;
+}
+
+#newbooks_news .t1{
+    position: absolute;
+    left: 10px;
+    top: 0;
+}
+
+#newbooks_news .t2{
+    position: absolute;
+    left: 130px;
+    top: 0;
+}
+
+#newbooks_news .item1{
+    margin-top: 37px;
+    border-top: 1px solid #aaa;
+}
+
+#newbooks_news a.rss{
+    display: inline-block;
+    margin-top: 30px;
+}
+
+#newbook_list1{
+
+}
+
+.booklist{
+    position: relative;
+    min-height: 111px; /*111px보다 작아지지 않도록*/
+    font: 13px "NGothic",Gulim;
+}
+
+.booklist::after{
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.booklist h1{
+    position: absolute;
+    left: 10px;
+    padding: 0;
+    width: 111px;
+}
+
+.booklist h1 img{
+    width: 100%;
+    max-width: 83px;
+}
+
+.booklist p.subtit{
+    width: 77%;
+    margin-left: 111px; /*이미지 뒤에 있던 글자를 옆으로 */
+    padding-right: 10px;
+    font: 13px "NGothicEB",Gulim;
+    color: #333;
+}
+
+.booklist p.smr{
+    width: 77%;
+    margin-left: 111px;
+    padding: 10px 10px 10px 0;
+    line-height: 150%;
+}
+
+.booklist footer{
+    width: 77%;
+    margin-left: 111px;
+    padding-right: 10px;
+}
+
+.booklist footer strong{
+    font: 13px "NGothic",Gulim;
+    color: #f60;
+}
+
+#newbooks_news .item2{ /* 클릭하면 화면 넘어감 */
+    display: none;
+}
+
+#news_list{
+    margin-top: 37px;
+    border-top: 1px solid #aaa;
+    padding-top: 20px;
+}
+
+#news_list ul{
+    padding: 0 10px;
+}
+
+#news_list ul li{
+    position: relative;
+    width: 100%;
+    padding: 8px 0;
+    border-bottom: 1px solid #ccc;
+    font: 13px "NGothic",Gulim;
+    color: #999;
+}
+
+#news_list ul li:last-child{
+    border-bottom: none;
+}
+
+#news_list ul li a{
+    background: url(../images/bul_icon.gif) no-repeat 0 50%;
+    padding-left: 10px;
+    color: #999
+}
+
+#news_list ul li a:hover{
+    color: #069;
+}
+
+#news_list ul li span{
+    position: absolute;
+    right: 10px;
+}
+/*이달의 저자*/
+#down_autor{ 
+    clear: both; /*content에서 float를 했기때문에 float 영향을 받지않도록 해제*/
+    position: relative; /*밑에있는 down영역의 포지션값의 기준이 되기 위해서*/
+    width: 100%;
+    border-top: 3px double #ccc;
+}
+
+.down{
+    position: absolute; /*도서자료 다운로드 버튼*/
+    left: 0;
+    top: 0;
+    max-width: 201px; /*최대크기*/
+    width: 22%; /*기본크기*/
+    padding: 20px 0 0 10px;
+}
+
+#autor_column{
+    margin-left: 27%;
+    width: 71%;
+}
+
+#autor_column h2{
+    padding: 20px 0 10px;
+}
+
+#autor_column ul{
+}
+
+#autor_column ul::after{
+    content: "";
+    display: block;
+    clear: both;
+}
+
+#autor_column ul li{
+    float: left; /*li 안에 있는 비디오, 글자 쭉 펼치기*/ 
+}
+
+#autor_column ul li a{
+    font: 12px "NGothic",Gulim;
+    color: #999;
+}
+
+#autor_column .nscreen{
+    width: 40%;
+    padding: 20px 0 0 15px;
+    line-height: 150%;
+}
+
+#autor_column .nscreen span{
+    display: block;  /*block으로 수직구조*/
+    color: #333;
+    font-family: "NGothic";
+    padding: 5px 0;
+}
+
+/*footer*/
+footer#realfooter{
+    background: url("../images/foot_bg.gif") repeat-x;
+}
+
+footer#realfooter .foot{
+    width: 95%;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+footer#realfooter .foot::after{
+    content: "";
+    display: block;
+    clear: both;
+}
+
+footer#realfooter .foot div{  /*position을 이용해서 위치를 잡아도 되지만(위치값 다 지정), float로 펼치는 방법을 사용*/
+    float: left;              /*absolute값은 좌표가 정확한지 확인불가, float 사용 권장,,*/
+    width: 350px;
+    color: #999;
+}
+
+footer#realfooter .foot p{
+    font: 12px "NGothic",Gulim;
+}
+
+footer#realfooter .foot .copy{
+    display: block; /*수직구조*/
+    padding-top: 10px;
+}
+
+footer#realfooter .foot ul{
+    float: right;
+}
+
+footer#realfooter .foot ul li{
+    display: inline; /*두개밖에 없으니까 inline으로 펼치기*/
+    padding: 0 5px;
+}
+
+}
+
+
+/*크기값 재 지정 수직구조,submenu없고, 로그인영역 없고, 2차메뉴 없고, 전체메뉴 반원, 다운로드버튼 없고, 
+메인 메뉴 플로팅?*/
+
+
+
+
+
+
+
+/*-------------------------------------------------------------------------------------------*/
+
+
+
+
+
+
+/*기본사이즈 95%*/
+@media (max-width:767px) {
+
+body{
+    background: url(../images/m_body_bg.gif) repeat-x;
+}
+
+header#firstheader{
+    position: relative;
+    width: 95%;
+    margin: 0 auto;
+    z-index: 40;
+}
+
+header#firstheader h1{
+    width: 97px;
+    margin: 0 auto;
+    padding: 15px 0;
+}
+
+header#firstheader form{
+    width: 98%;
+    margin: 0 auto;
+    padding-bottom: 10px;
+}
+
+#firstheader form legend{
+    display: none;
+}
+
+#firstheader form .tbox{
+    width: 83%;
+    height: 20px;
+    border: 1px solid #ccc;
+}
+
+#firstheader form .sbtn{
+    float: right;
+}
+
+#firstheader .util{
+    display: none;
+}
+
+#gnb{
+    margin: 0 auto;
+    width: 98%;
+}
+
+ #gnb .gnblist{
+        height: 78px; 
+        border-top: 2px solid #3da7db; 
+        border-bottom: 2px solid #3da7db;
+    }
+
+#gnb .gnblist li{
+    float: left; 
+    width: 50%; 
+    height: 39px; 
+    background: #eee; 
+    border: 1px solid #999;
+    box-sizing: border-box;
+}
+
+#gnb .gnblist li:nth-child(1){
+    border-left: none; 
+    border-top: none;
+}
+
+#gnb .gnblist li:nth-child(2){
+    border-top: none; 
+    border-left: none; 
+    border-right: none;
+}
+
+#gnb .gnblist li:nth-child(3){
+    border-top: none; 
+    border-left: none; 
+    border-bottom: none;
+}
+
+#gnb .gnblist li:nth-child(4){
+    border: none;
+}
+
+#gnb li a.mm{ /* 링크 걸려있는 1차메뉴 정리*/
+    float: left;
+    padding: 10px;
+    color: #555;
+    text-decoration: none;
+}
+
+#gnb li ul{ /*2차 메뉴 정리*/
+    display: none;
+}
+
+#allmenu_view{
+    width: 100%;
+    text-align: center;
+}
+
+#allmenu_view a{ /*전체메뉴의 a태그*/
+    display: inline-block;
+    background: url(../images/btn_allmenu.png) no-repeat center top;
+    width: 50%;
+    height: 26px;
+    padding-top: 13px;
+    color: #fff;
+}
+
+#allmenu_box{
+    display: none;
+    width: 85%;
+    margin: 0 auto;
+    padding: 10px 0 0;
+    background: #fff;
+    border: 2px solid #369;
+}
+
+#allmenu_box ul{
+    width: 95%;
+    margin: 0 auto;
+    padding-bottom: 5px;
+}
+
+#allmenu_box ul li{
+    width: 100%;
+    border-bottom: 1px dashed #ccc;
+    padding: 5px 0;
+}
+
+#allmenu_box ul li:last-child{
+    border:none;
+}
+
+#allmenu_box ul li::after{
+    content: "";
+    display: block;
+    clear: both;
+}
+
+#allmenu_box ul li a{
+    font: bold 11px/1.5 "NGothic", Gulim;
+    color: #555;
+    background: #eee;
+    width: 33%;
+    text-align: center;
+    float: left;
+}
+
+#allmenu_box ul li ul{
+    float: left;
+    width: 65%;
+    padding: 0 0 0 2%;
+}
+
+#allmenu_box ul li ul li{
+    float: left;
+    width: auto;
+    padding: 5px 5% 5px 0;
+    border: none;
+}
+
+#allmenu_box ul li ul li a{
+    width: auto;
+    font: bold 10px "NGothic", Gulim;
+    color: #aaa;
+    text-align: left;
+    background: none;
+}
+
+.all_close{
+    display: block;
+    text-align: center;
+    padding: 5px;
+    background: #369;
+    color: #fff;
+}
+
+.all_close:hover{
+    color: #fff;
+}
+
+
+#recomm_book{   /*제일 큰 덩어리부터 처리*/ 
+    position: relative;
+    width: 95%;
+    margin: 0 auto;
+    padding-bottom: 20px;
+    overflow: hidden;
+    z-index: 30;
+}
+
+#book_frame{
+    position: relative;
+    left: 0;
+    width: 200%; /*보여지는 영역은 2개가 들어가야 하기 때문에 1003의 2배*/
+}
+
+#book_frame:after{
+    content: "";
+    display: block;
+    clear: both;
+}
+
+#book_frame .bookcon{
+    float: left;
+    width: 50%; /*200%=2006의 50%*//*1003*/
+}
+
+#book_frame .bookcon::after{
+    content: "";
+    display: block;
+    clear: both;
+}
+
+#book_frame .bookcon h2{
+    width: 90%;
+    text-align: right;
+    padding: 4% 0 0 9%;
+}
+
+#book_frame .bookcon h2 img{
+    width: 60%;
+}
+
+#book_frame .bookcon ul{
+    width: 100%;
+}
+
+#book_frame .bookcon ul::after{
+    content: "";
+    display: block;
+    clear: both;
+}
+
+#book_frame .bookcon li.pic{
+    float: left; /*책은 왼쪽으로*/
+    position: relative;
+    width: 27.2%; /*이미지 크기*/
+    top: -30px; /*살짝 위로 올라가야됨*/
+    margin-bottom: -30px; /*살짝 위로 올라가야됨*/
+    padding-left: 6.48%;
+}
+
+#book_frame .bookcon li.smr{
+    float: right; /*설명은 오른쪽으로*/
+    width: 48.75%;
+    padding: 3% 6.3% 0;
+}
+
+#book_frame .bookcon li.detail{
+    float: right;
+    width: 44.76%;
+    padding: 3% 6% 0;
+}
+
+#book_frame .bookcon li.detail img{
+    width: 60%; /*브라우저 크기에 따라 크기 조정이 될 수 있도록 설정*/
+}
+
+#arrow a{ /*화살표 두개 한번에 포지션을 잡고 안에서 각각 위치 보내주면됨*/
+    position: absolute;
+    top: 25%;
+    width: 5%;
+}
+
+#arrow a img{
+    width: 70%;
+}
+
+#arrow a.prev{
+    left:0
+}
+
+#arrow a.next{
+    right:0
+}
+
+
+#book_roll{
+    position: relative;
+    padding-top: 20px;
+    left: 48%;
+    bottom: 0;
+}
+
+#book_roll li{ /*위치는 위에서 두개 한번에 잡고 inline으로 한번에 펼치기*/
+    display: inline;
+}
+
+#book_roll li img{
+    width: 8px;
+}
+
+#content{
+    width: 95%;
+    margin: 0 auto;
+    border-top: 3px double #ccc;
+    padding: 30px 0;
+}
+
+#login_banner{
+    display: none;
+}
+
+#newbooks_news{
+    position: relative;
+    border: 1px solid #fff;
+}
+
+#newbooks_news .t1{
+    position: absolute;
+    left: 5px;
+    top: 0;
+}
+
+#newbooks_news .t2{
+    position: absolute;
+    left: 125px;
+    top: 0;
+}
+
+#newbooks_news .item1{
+    margin-top: 37px;
+    border-top: 1px solid #aaa;
+}
+
+#newbooks_news a.rss{
+    display: inline-block;
+}
+
+.booklist{
+    position: relative;
+    min-height: 111px; /*111px보다 작아지지 않도록*/
+    font: 11px "NGothic",Gulim;
+    padding: 20px 0 10px; /*padding값을 여기서 설정 .rss에서 말고*/
+}
+
+.booklist h1{
+    position: absolute;
+    left: 5px;
+    padding: 0;
+    width: 85px;
+}
+
+.booklist p.subtit{
+    margin-left: 95px; /*이미지 뒤에 있던 글자를 옆으로 */
+    padding-right: 0;
+    font: 12px "NGothicEB",Gulim;
+    color: #333;
+}
+
+.booklist p.smr{
+    margin-left: 95px;
+    padding: 10px 0px 10px 0;
+    line-height: 150%;
+    text-align: justify;
+}
+
+.booklist footer{
+    margin-left: 95px;
+    padding-right: 0;
+}
+
+.booklist footer strong{
+    color: #f60;
+}
+
+#newbooks_news .item2{ /* 클릭하면 화면 넘어감 */
+    display: none;
+}
+
+#news_list{
+    margin-top: 37px;
+    border-top: 1px solid #aaa;
+    padding-top: 20px;
+}
+
+#news_list ul{
+    padding: 0 10px;
+}
+
+#news_list ul li{
+    position: relative;
+    width: 100%;
+    padding: 7px 0;
+    border-bottom: 1px solid #ccc;
+    font: 13px "NGothic",Gulim;
+    color: #999;
+}
+
+#news_list ul li:last-child{
+    border-bottom: none;
+}
+
+#news_list ul li a{
+    background: url(../images/bul_icon.gif) no-repeat 0 50%;
+    padding-left: 10px;
+    color: #999
+}
+
+#news_list ul li a:hover{
+    color: #069;
+}
+
+#news_list ul li span{
+    position: absolute;
+    right: 10px;
+}
+
+#down_autor{
+    position: relative;
+    width: 95%;
+    margin: 0 auto;
+    border-top: 1px solid white;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+#down_autor p a img{
+    display: none;
+}
+
+
+#autor_column h2{
+    padding: 20px 0 10px;
+}
+
+#autor_column ul{
+    width: 90%;
+    height: auto;  /*동영상크기를 모를때는 높이값을 지정하지 않고 놔두거나 auto값으로 진행*/
+}
+
+#autor_column ul li:nth-child(1){ /*안전장치*/
+    text-align: center;
+}
+
+#autor_column ul li video{
+    width: 100%;
+}
+
+#autor_column ul li a{
+    font: 12px "NGothic",Gulim;
+    color: #999;
+}
+
+#autor_column .nscreen{
+    line-height: 150%;
+}
+
+#autor_column .nscreen span{
+    display: block;  /*block으로 수직구조*/
+    color: #333;
+    font-weight: bold;
+    padding: 5px 0;
+}
+
+footer#realfooter{
+    background: url("../images/foot_bg.gif") repeat-x;
+}
+
+footer#realfooter .foot{
+    width: 95%;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+footer#realfooter .foot::after{
+    content: "";
+    display: block;
+    clear: both;
+}
+
+footer#realfooter .foot div{  /*position을 이용해서 위치를 잡아도 되지만(위치값 다 지정), float로 펼치는 방법을 사용*/
+    color: #999;
+}
+
+footer#realfooter .foot p{
+    font: 11px "NGothic",Gulim;
+}
+
+footer#realfooter .foot .copy{
+    padding-top: 20px;
+    display: block; /*수직구조*/
+}
+
+footer#realfooter .foot ul{
+    padding-top: 10px;
+}
+
+footer#realfooter .foot ul li{
+    float: left;
+    width: 50%;
+}
+
+footer#realfooter .foot ul li img{
+    width: 100%;
+}
+}
